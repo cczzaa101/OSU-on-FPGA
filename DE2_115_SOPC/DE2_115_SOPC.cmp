@@ -1,0 +1,42 @@
+	component DE2_115_SOPC is
+		port (
+			altpll_sys                   : out   std_logic;                                        -- clk
+			altpll_io                    : out   std_logic;                                        -- clk
+			clk_50                       : in    std_logic                     := 'X';             -- clk
+			reset_n                      : in    std_logic                     := 'X';             -- reset_n
+			in_port_to_the_key           : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- export
+			mouse_x_export               : out   std_logic_vector(9 downto 0);                     -- export
+			mouse_y_export               : out   std_logic_vector(9 downto 0);                     -- export
+			altpll_sdram                 : out   std_logic;                                        -- clk
+			altpll_25                    : out   std_logic;                                        -- clk
+			locked_from_the_pll          : out   std_logic;                                        -- export
+			phasedone_from_the_pll       : out   std_logic;                                        -- export
+			zs_addr_from_the_sdram       : out   std_logic_vector(12 downto 0);                    -- addr
+			zs_ba_from_the_sdram         : out   std_logic_vector(1 downto 0);                     -- ba
+			zs_cas_n_from_the_sdram      : out   std_logic;                                        -- cas_n
+			zs_cke_from_the_sdram        : out   std_logic;                                        -- cke
+			zs_cs_n_from_the_sdram       : out   std_logic;                                        -- cs_n
+			zs_dq_to_and_from_the_sdram  : inout std_logic_vector(31 downto 0) := (others => 'X'); -- dq
+			zs_dqm_from_the_sdram        : out   std_logic_vector(3 downto 0);                     -- dqm
+			zs_ras_n_from_the_sdram      : out   std_logic;                                        -- ras_n
+			zs_we_n_from_the_sdram       : out   std_logic;                                        -- we_n
+			in_port_to_the_sma_in        : in    std_logic                     := 'X';             -- export
+			out_port_from_the_sma_out    : out   std_logic;                                        -- export
+			SRAM_DQ_to_and_from_the_sram : inout std_logic_vector(15 downto 0) := (others => 'X'); -- DQ
+			SRAM_ADDR_from_the_sram      : out   std_logic_vector(19 downto 0);                    -- ADDR
+			SRAM_UB_n_from_the_sram      : out   std_logic;                                        -- UB_n
+			SRAM_LB_n_from_the_sram      : out   std_logic;                                        -- LB_n
+			SRAM_WE_n_from_the_sram      : out   std_logic;                                        -- WE_n
+			SRAM_CE_n_from_the_sram      : out   std_logic;                                        -- CE_n
+			SRAM_OE_n_from_the_sram      : out   std_logic;                                        -- OE_n
+			in_port_to_the_sw            : in    std_logic_vector(17 downto 0) := (others => 'X'); -- export
+			usb_conduit_end_DATA         : inout std_logic_vector(15 downto 0) := (others => 'X'); -- DATA
+			usb_conduit_end_ADDR         : out   std_logic_vector(1 downto 0);                     -- ADDR
+			usb_conduit_end_RD_N         : out   std_logic;                                        -- RD_N
+			usb_conduit_end_WR_N         : out   std_logic;                                        -- WR_N
+			usb_conduit_end_CS_N         : out   std_logic;                                        -- CS_N
+			usb_conduit_end_RST_N        : out   std_logic;                                        -- RST_N
+			usb_conduit_end_INT          : in    std_logic                     := 'X'              -- INT
+		);
+	end component DE2_115_SOPC;
+

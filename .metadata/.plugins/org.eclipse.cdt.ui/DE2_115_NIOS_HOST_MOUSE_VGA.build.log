@@ -1,0 +1,15 @@
+18:35:27 **** Incremental Build of configuration Nios II for project DE2_115_NIOS_HOST_MOUSE_VGA ****
+make all 
+Info: Building ../DE2_115_NIOS_HOST_MOUSE_VGA_bsp/
+C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../DE2_115_NIOS_HOST_MOUSE_VGA_bsp/
+[BSP build complete]
+Info: Compiling DE2_115_NIOS_HOST_MOUSE_VGA.c to obj/default/DE2_115_NIOS_HOST_MOUSE_VGA.o
+nios2-elf-gcc -xc -MP -MMD -c -I../DE2_115_NIOS_HOST_MOUSE_VGA_bsp//HAL/inc -I../DE2_115_NIOS_HOST_MOUSE_VGA_bsp/ -I../DE2_115_NIOS_HOST_MOUSE_VGA_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/DE2_115_NIOS_HOST_MOUSE_VGA.o DE2_115_NIOS_HOST_MOUSE_VGA.c
+DE2_115_NIOS_HOST_MOUSE_VGA.c:51:17: fatal error: LCD.h: No such file or directory
+ #include "LCD.h"
+                 ^
+compilation terminated.
+make: *** [obj/default/DE2_115_NIOS_HOST_MOUSE_VGA.o] Error 1
+
+18:35:28 Build Finished (took 608ms)
+
