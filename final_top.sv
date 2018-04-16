@@ -471,8 +471,6 @@ DE2_115_SOPC DE2_115_SOPC_inst(
                        .altpll_sdram(DRAM_CLK),
                        .altpll_sys(),                       
                       
-                      // the_key
-                       .in_port_to_the_key(KEY),
 
                         
                       // the_sdram
@@ -487,12 +485,6 @@ DE2_115_SOPC DE2_115_SOPC_inst(
                        .zs_we_n_from_the_sdram(DRAM_WE_N),
                        
 
-                      // the_sma_in
-                       .in_port_to_the_sma_in(SMA_CLKIN),
-
-                      // the_sma_out
-                       .out_port_from_the_sma_out(SMA_CLKOUT),
-
                       // the_sram
                        .SRAM_ADDR_from_the_sram(SRAM_ADDR),
                        .SRAM_CE_n_from_the_sram(SRAM_CE_N),
@@ -502,8 +494,6 @@ DE2_115_SOPC DE2_115_SOPC_inst(
                        .SRAM_UB_n_from_the_sram(SRAM_UB_N),
                        .SRAM_WE_n_from_the_sram(SRAM_WE_N),
                        
-                      // the_sw
-                       .in_port_to_the_sw(SW),
                        
                       // the_usb
 							  .usb_conduit_end_DATA(OTG_DATA),       // usb_conduit_end.DATA
@@ -514,37 +504,21 @@ DE2_115_SOPC DE2_115_SOPC_inst(
 							  .usb_conduit_end_RST_N(OTG_RST_N),     // .RST_N
 							  .usb_conduit_end_INT(OTG_INT),         // .INT      
 						
-							  .mouse_x_export(MouseX),
-							  .mouse_y_export(MouseY),
+							  .mouse_data_EXPORT_DATA( Mouse_data),
                     );                    
 
 logic[9:0] 	DrawX, DrawY;	
-logic[9:0]	MouseX, MouseY, MouseX_S, MouseY_S;
-
-HexDriver hex_inst_0 (MouseY_S[3:0], HEX0);
-HexDriver hex_inst_1 (MouseY_S[7:4], HEX1);
-HexDriver hex_inst_2 (MouseX_S[3:0], HEX2);
-HexDriver hex_inst_3 (MouseX_S[7:4], HEX3);
-
-always_ff @ (posedge VGA_VS)
-begin
-	if( reset_h )
-	begin
-		MouseX_S<=0;
-		MouseY_S<=0;
-	end
-	else
-	begin
-		MouseX_S <= MouseX;
-		MouseY_S <= MouseY;
-	end
-end
+logic[31:0] Mouse_data;
+HexDriver hex_inst_0 (Mouse_data[3:0], HEX0);
+HexDriver hex_inst_1 (Mouse_data[7:4], HEX1);
+HexDriver hex_inst_2 (Mouse_data[19:16], HEX2);
+HexDriver hex_inst_3 (Mouse_data[23:20], HEX3);
 	 
 logic is_ball;
 vga_clk vga_clk_instance( .*, .inclk0(CLOCK_50), .c0(VGA_CLK));
 VGA_controller VC (.Clk(CLOCK_50), .Reset(reset_h), .*);
 color_mapper color_instance(.*);
-ball ball_instance(.Clk(CLOCK_50), .Reset(reset_h), .X(MouseX_S), .Y(MouseY_S), .*, .frame_clk(VGA_VS));
+ball ball_instance(.Clk(CLOCK_50), .Reset(reset_h), .X(10'd320), .Y(10'd320), .*, .frame_clk(VGA_VS));
 // Flash Config
 assign	FL_RST_N = reset_n;
 assign	FL_WP_N = 1'b1;

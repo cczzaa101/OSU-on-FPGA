@@ -140,8 +140,8 @@ int main(void)
     alt_u8  pbutton = 0;
     alt_u8 toggle=0;
     alt_u8 data_size;
-    volatile unsigned int *MOUSEX_PIO = (unsigned int*)0x08001050; //make a pointer to access the PIO block
-    volatile unsigned int *MOUSEY_PIO = (unsigned int*)0x08001040;
+    volatile unsigned int *MOUSE_PIO = (unsigned int*)0x08001000; //make a pointer to access the PIO block
+    //volatile unsigned int *MOUSEY_PIO = (unsigned int*)0x08001040;
     //VGA display initial
     
 
@@ -1668,10 +1668,13 @@ USB_HOT_PLUG:
     
     px=maxmin(px,639,0);
     py=maxmin(py,479,0);
-    *MOUSEX_PIO = px;
-    while(*MOUSEX_PIO != px);
-    *MOUSEY_PIO = py;
-    while(*MOUSEY_PIO != py);
+    int now = MOUSE_PIO[0];
+    if(now>1) now = 1;
+    MOUSE_PIO[0] = 1 - now;
+    //while(MOUSE_PIO[0] != px);
+    //MOUSE_PIO[1] = py;
+    //while(MOUSE_PIO[1] != py);
+    //*MOUSEY_PIO[1] = py;
     printf("\n[MOUSE XY]:%d, %d", px, py);
     usleep(5*1000);
     //usleep(5*1000);

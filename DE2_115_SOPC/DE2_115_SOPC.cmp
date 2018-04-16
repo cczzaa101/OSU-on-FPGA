@@ -4,9 +4,7 @@
 			altpll_io                    : out   std_logic;                                        -- clk
 			clk_50                       : in    std_logic                     := 'X';             -- clk
 			reset_n                      : in    std_logic                     := 'X';             -- reset_n
-			in_port_to_the_key           : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- export
-			mouse_x_export               : out   std_logic_vector(9 downto 0);                     -- export
-			mouse_y_export               : out   std_logic_vector(9 downto 0);                     -- export
+			mouse_data_EXPORT_DATA       : out   std_logic_vector(31 downto 0);                    -- EXPORT_DATA
 			altpll_sdram                 : out   std_logic;                                        -- clk
 			altpll_25                    : out   std_logic;                                        -- clk
 			locked_from_the_pll          : out   std_logic;                                        -- export
@@ -20,8 +18,6 @@
 			zs_dqm_from_the_sdram        : out   std_logic_vector(3 downto 0);                     -- dqm
 			zs_ras_n_from_the_sdram      : out   std_logic;                                        -- ras_n
 			zs_we_n_from_the_sdram       : out   std_logic;                                        -- we_n
-			in_port_to_the_sma_in        : in    std_logic                     := 'X';             -- export
-			out_port_from_the_sma_out    : out   std_logic;                                        -- export
 			SRAM_DQ_to_and_from_the_sram : inout std_logic_vector(15 downto 0) := (others => 'X'); -- DQ
 			SRAM_ADDR_from_the_sram      : out   std_logic_vector(19 downto 0);                    -- ADDR
 			SRAM_UB_n_from_the_sram      : out   std_logic;                                        -- UB_n
@@ -29,7 +25,6 @@
 			SRAM_WE_n_from_the_sram      : out   std_logic;                                        -- WE_n
 			SRAM_CE_n_from_the_sram      : out   std_logic;                                        -- CE_n
 			SRAM_OE_n_from_the_sram      : out   std_logic;                                        -- OE_n
-			in_port_to_the_sw            : in    std_logic_vector(17 downto 0) := (others => 'X'); -- export
 			usb_conduit_end_DATA         : inout std_logic_vector(15 downto 0) := (others => 'X'); -- DATA
 			usb_conduit_end_ADDR         : out   std_logic_vector(1 downto 0);                     -- ADDR
 			usb_conduit_end_RD_N         : out   std_logic;                                        -- RD_N

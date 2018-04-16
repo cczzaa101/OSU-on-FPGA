@@ -1,5 +1,5 @@
 Flow report for DE2_115_NIOS_HOST_MOUSE_VGA
-Sun Apr 15 20:51:21 2018
+Sun Apr 15 23:12:10 2018
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
 
 
@@ -41,20 +41,20 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sun Apr 15 20:51:11 2018       ;
+; Flow Status                        ; Successful - Sun Apr 15 23:12:00 2018       ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
 ; Revision Name                      ; DE2_115_NIOS_HOST_MOUSE_VGA                 ;
 ; Top-level Entity Name              ; final_top                                   ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 5,917 / 114,480 ( 5 % )                     ;
-;     Total combinational functions  ; 5,043 / 114,480 ( 4 % )                     ;
-;     Dedicated logic registers      ; 3,816 / 114,480 ( 3 % )                     ;
-; Total registers                    ; 3935                                        ;
+; Total logic elements               ; 6,273 / 114,480 ( 5 % )                     ;
+;     Total combinational functions  ; 5,237 / 114,480 ( 5 % )                     ;
+;     Dedicated logic registers      ; 4,158 / 114,480 ( 4 % )                     ;
+; Total registers                    ; 4277                                        ;
 ; Total pins                         ; 518 / 529 ( 98 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 72,640 / 3,981,312 ( 2 % )                  ;
+; Total memory bits                  ; 72,288 / 3,981,312 ( 2 % )                  ;
 ; Embedded Multiplier 9-bit elements ; 8 / 532 ( 2 % )                             ;
 ; Total PLLs                         ; 2 / 4 ( 50 % )                              ;
 +------------------------------------+---------------------------------------------+
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+-----------------------------+
 ; Option            ; Setting                     ;
 +-------------------+-----------------------------+
-; Start date & time ; 04/15/2018 20:49:27         ;
+; Start date & time ; 04/15/2018 23:10:25         ;
 ; Main task         ; Compilation                 ;
 ; Revision Name     ; DE2_115_NIOS_HOST_MOUSE_VGA ;
 +-------------------+-----------------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------------------------------------------------------------+-----------------------------+--------------+------------+
 ; Assignment Name                     ; Value                                                                                       ; Default Value               ; Entity Name  ; Section Id ;
 +-------------------------------------+---------------------------------------------------------------------------------------------+-----------------------------+--------------+------------+
-; COMPILER_SIGNATURE_ID               ; 123745753123770.152384336635560                                                             ; --                          ; --           ; --         ;
+; COMPILER_SIGNATURE_ID               ; 123745753123770.152385182420972                                                             ; --                          ; --           ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                                                          ; --                          ; --           ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                                                           ; --                          ; --           ; --         ;
 ; MISC_FILE                           ; D:/svn/DE2_115_GOLDEN_TOP/DE2_115_GOLDEN_TOP.dpf                                            ; --                          ; --           ; --         ;
@@ -96,7 +96,7 @@ agreement for further details.
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                                       ; --                          ; --           ; --         ;
 ; SLD_FILE                            ; DE2_115_SOPC/synthesis/DE2_115_SOPC.regmap                                                  ; --                          ; --           ; --         ;
 ; SLD_FILE                            ; DE2_115_SOPC/synthesis/DE2_115_SOPC.debuginfo                                               ; --                          ; --           ; --         ;
-; SLD_INFO                            ; QSYS_NAME DE2_115_SOPC HAS_SOPCINFO 1 GENERATION_ID 1523842120                              ; --                          ; DE2_115_SOPC ; --         ;
+; SLD_INFO                            ; QSYS_NAME DE2_115_SOPC HAS_SOPCINFO 1 GENERATION_ID 1523851750                              ; --                          ; DE2_115_SOPC ; --         ;
 ; SMART_RECOMPILE                     ; On                                                                                          ; Off                         ; --           ; --         ;
 ; SOPCINFO_FILE                       ; DE2_115_SOPC/synthesis/../../DE2_115_SOPC.sopcinfo                                          ; --                          ; --           ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                                                          ; --                          ; --           ; --         ;
@@ -109,11 +109,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:46     ; 1.0                     ; 1079 MB             ; 00:01:11                           ;
-; Fitter                    ; 00:00:48     ; 2.1                     ; 2258 MB             ; 00:01:24                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 717 MB              ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:08     ; 1.1                     ; 1023 MB             ; 00:00:08                           ;
-; Total                     ; 00:01:46     ; --                      ; --                  ; 00:02:47                           ;
+; Analysis & Synthesis      ; 00:00:40     ; 1.0                     ; 1042 MB             ; 00:01:04                           ;
+; Fitter                    ; 00:00:45     ; 1.9                     ; 2270 MB             ; 00:01:24                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 721 MB              ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:08     ; 1.1                     ; 1022 MB             ; 00:00:08                           ;
+; Total                     ; 00:01:37     ; --                      ; --                  ; 00:02:40                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

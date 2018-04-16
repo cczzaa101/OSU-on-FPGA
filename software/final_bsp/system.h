@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'DE2_115_SOPC'
  * SOPC Builder design path: ../../DE2_115_SOPC.sopcinfo
  *
- * Generated: Sun Apr 15 20:34:33 CDT 2018
+ * Generated: Sun Apr 15 23:12:38 CDT 2018
  */
 
 /*
@@ -128,7 +128,7 @@
  */
 
 #define ALT_MODULE_CLASS_CY7C67200_IF_0 CY7C67200_IF
-#define CY7C67200_IF_0_BASE 0x9000020
+#define CY7C67200_IF_0_BASE 0x9000000
 #define CY7C67200_IF_0_IRQ 5
 #define CY7C67200_IF_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define CY7C67200_IF_0_NAME "/dev/CY7C67200_IF_0"
@@ -143,12 +143,12 @@
 
 #define __ALTERA_AVALON_JTAG_UART
 #define __ALTERA_AVALON_NEW_SDRAM_CONTROLLER
-#define __ALTERA_AVALON_PIO
 #define __ALTERA_AVALON_SYSID_QSYS
 #define __ALTERA_AVALON_TIMER
 #define __ALTERA_NIOS2_QSYS
 #define __ALTPLL
 #define __CY7C67200_IF
+#define __MOUSE_CORE_REMAKE
 #define __TERASIC_SRAM
 
 
@@ -168,19 +168,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart"
-#define ALT_STDERR_BASE 0x8001090
+#define ALT_STDERR_BASE 0x80010b0
 #define ALT_STDERR_DEV jtag_uart
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart"
-#define ALT_STDIN_BASE 0x8001090
+#define ALT_STDIN_BASE 0x80010b0
 #define ALT_STDIN_DEV jtag_uart
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart"
-#define ALT_STDOUT_BASE 0x8001090
+#define ALT_STDOUT_BASE 0x80010b0
 #define ALT_STDOUT_DEV jtag_uart
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -204,7 +204,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart altera_avalon_jtag_uart
-#define JTAG_UART_BASE 0x8001090
+#define JTAG_UART_BASE 0x80010b0
 #define JTAG_UART_IRQ 3
 #define JTAG_UART_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_NAME "/dev/jtag_uart"
@@ -217,84 +217,17 @@
 
 
 /*
- * key configuration
+ * mouse_core_remake_0 configuration
  *
  */
 
-#define ALT_MODULE_CLASS_key altera_avalon_pio
-#define KEY_BASE 0x9000010
-#define KEY_BIT_CLEARING_EDGE_REGISTER 0
-#define KEY_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define KEY_CAPTURE 1
-#define KEY_DATA_WIDTH 4
-#define KEY_DO_TEST_BENCH_WIRING 0
-#define KEY_DRIVEN_SIM_VALUE 0
-#define KEY_EDGE_TYPE "FALLING"
-#define KEY_FREQ 10000000
-#define KEY_HAS_IN 1
-#define KEY_HAS_OUT 0
-#define KEY_HAS_TRI 0
-#define KEY_IRQ 1
-#define KEY_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define KEY_IRQ_TYPE "EDGE"
-#define KEY_NAME "/dev/key"
-#define KEY_RESET_VALUE 0
-#define KEY_SPAN 16
-#define KEY_TYPE "altera_avalon_pio"
-
-
-/*
- * mouse_x configuration
- *
- */
-
-#define ALT_MODULE_CLASS_mouse_x altera_avalon_pio
-#define MOUSE_X_BASE 0x8001050
-#define MOUSE_X_BIT_CLEARING_EDGE_REGISTER 0
-#define MOUSE_X_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define MOUSE_X_CAPTURE 0
-#define MOUSE_X_DATA_WIDTH 10
-#define MOUSE_X_DO_TEST_BENCH_WIRING 0
-#define MOUSE_X_DRIVEN_SIM_VALUE 0
-#define MOUSE_X_EDGE_TYPE "NONE"
-#define MOUSE_X_FREQ 10000000
-#define MOUSE_X_HAS_IN 0
-#define MOUSE_X_HAS_OUT 1
-#define MOUSE_X_HAS_TRI 0
-#define MOUSE_X_IRQ -1
-#define MOUSE_X_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define MOUSE_X_IRQ_TYPE "NONE"
-#define MOUSE_X_NAME "/dev/mouse_x"
-#define MOUSE_X_RESET_VALUE 0
-#define MOUSE_X_SPAN 16
-#define MOUSE_X_TYPE "altera_avalon_pio"
-
-
-/*
- * mouse_y configuration
- *
- */
-
-#define ALT_MODULE_CLASS_mouse_y altera_avalon_pio
-#define MOUSE_Y_BASE 0x8001040
-#define MOUSE_Y_BIT_CLEARING_EDGE_REGISTER 0
-#define MOUSE_Y_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define MOUSE_Y_CAPTURE 0
-#define MOUSE_Y_DATA_WIDTH 10
-#define MOUSE_Y_DO_TEST_BENCH_WIRING 0
-#define MOUSE_Y_DRIVEN_SIM_VALUE 0
-#define MOUSE_Y_EDGE_TYPE "NONE"
-#define MOUSE_Y_FREQ 10000000
-#define MOUSE_Y_HAS_IN 0
-#define MOUSE_Y_HAS_OUT 1
-#define MOUSE_Y_HAS_TRI 0
-#define MOUSE_Y_IRQ -1
-#define MOUSE_Y_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define MOUSE_Y_IRQ_TYPE "NONE"
-#define MOUSE_Y_NAME "/dev/mouse_y"
-#define MOUSE_Y_RESET_VALUE 0
-#define MOUSE_Y_SPAN 16
-#define MOUSE_Y_TYPE "altera_avalon_pio"
+#define ALT_MODULE_CLASS_mouse_core_remake_0 mouse_core_remake
+#define MOUSE_CORE_REMAKE_0_BASE 0x8001000
+#define MOUSE_CORE_REMAKE_0_IRQ -1
+#define MOUSE_CORE_REMAKE_0_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define MOUSE_CORE_REMAKE_0_NAME "/dev/mouse_core_remake_0"
+#define MOUSE_CORE_REMAKE_0_SPAN 64
+#define MOUSE_CORE_REMAKE_0_TYPE "mouse_core_remake"
 
 
 /*
@@ -303,7 +236,7 @@
  */
 
 #define ALT_MODULE_CLASS_pll altpll
-#define PLL_BASE 0x8001080
+#define PLL_BASE 0x80010a0
 #define PLL_IRQ -1
 #define PLL_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define PLL_NAME "/dev/pll"
@@ -351,60 +284,6 @@
 
 
 /*
- * sma_in configuration
- *
- */
-
-#define ALT_MODULE_CLASS_sma_in altera_avalon_pio
-#define SMA_IN_BASE 0x8001070
-#define SMA_IN_BIT_CLEARING_EDGE_REGISTER 0
-#define SMA_IN_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define SMA_IN_CAPTURE 0
-#define SMA_IN_DATA_WIDTH 1
-#define SMA_IN_DO_TEST_BENCH_WIRING 0
-#define SMA_IN_DRIVEN_SIM_VALUE 0
-#define SMA_IN_EDGE_TYPE "NONE"
-#define SMA_IN_FREQ 100000000
-#define SMA_IN_HAS_IN 1
-#define SMA_IN_HAS_OUT 0
-#define SMA_IN_HAS_TRI 0
-#define SMA_IN_IRQ -1
-#define SMA_IN_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define SMA_IN_IRQ_TYPE "NONE"
-#define SMA_IN_NAME "/dev/sma_in"
-#define SMA_IN_RESET_VALUE 0
-#define SMA_IN_SPAN 16
-#define SMA_IN_TYPE "altera_avalon_pio"
-
-
-/*
- * sma_out configuration
- *
- */
-
-#define ALT_MODULE_CLASS_sma_out altera_avalon_pio
-#define SMA_OUT_BASE 0x8001060
-#define SMA_OUT_BIT_CLEARING_EDGE_REGISTER 0
-#define SMA_OUT_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define SMA_OUT_CAPTURE 0
-#define SMA_OUT_DATA_WIDTH 1
-#define SMA_OUT_DO_TEST_BENCH_WIRING 0
-#define SMA_OUT_DRIVEN_SIM_VALUE 0
-#define SMA_OUT_EDGE_TYPE "NONE"
-#define SMA_OUT_FREQ 100000000
-#define SMA_OUT_HAS_IN 0
-#define SMA_OUT_HAS_OUT 1
-#define SMA_OUT_HAS_TRI 0
-#define SMA_OUT_IRQ -1
-#define SMA_OUT_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define SMA_OUT_IRQ_TYPE "NONE"
-#define SMA_OUT_NAME "/dev/sma_out"
-#define SMA_OUT_RESET_VALUE 0
-#define SMA_OUT_SPAN 16
-#define SMA_OUT_TYPE "altera_avalon_pio"
-
-
-/*
  * sram configuration
  *
  */
@@ -419,45 +298,18 @@
 
 
 /*
- * sw configuration
- *
- */
-
-#define ALT_MODULE_CLASS_sw altera_avalon_pio
-#define SW_BASE 0x9000000
-#define SW_BIT_CLEARING_EDGE_REGISTER 0
-#define SW_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define SW_CAPTURE 1
-#define SW_DATA_WIDTH 18
-#define SW_DO_TEST_BENCH_WIRING 0
-#define SW_DRIVEN_SIM_VALUE 0
-#define SW_EDGE_TYPE "FALLING"
-#define SW_FREQ 10000000
-#define SW_HAS_IN 1
-#define SW_HAS_OUT 0
-#define SW_HAS_TRI 0
-#define SW_IRQ 2
-#define SW_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define SW_IRQ_TYPE "EDGE"
-#define SW_NAME "/dev/sw"
-#define SW_RESET_VALUE 0
-#define SW_SPAN 16
-#define SW_TYPE "altera_avalon_pio"
-
-
-/*
  * sysid configuration
  *
  */
 
 #define ALT_MODULE_CLASS_sysid altera_avalon_sysid_qsys
-#define SYSID_BASE 0x9000030
+#define SYSID_BASE 0x9000010
 #define SYSID_ID 0
 #define SYSID_IRQ -1
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1523842120
+#define SYSID_TIMESTAMP 1523851750
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 
@@ -468,7 +320,7 @@
 
 #define ALT_MODULE_CLASS_timer altera_avalon_timer
 #define TIMER_ALWAYS_RUN 0
-#define TIMER_BASE 0x8001000
+#define TIMER_BASE 0x8001060
 #define TIMER_COUNTER_SIZE 32
 #define TIMER_FIXED_PERIOD 0
 #define TIMER_FREQ 10000000
@@ -494,7 +346,7 @@
 
 #define ALT_MODULE_CLASS_timer_stamp altera_avalon_timer
 #define TIMER_STAMP_ALWAYS_RUN 0
-#define TIMER_STAMP_BASE 0x8001020
+#define TIMER_STAMP_BASE 0x8001080
 #define TIMER_STAMP_COUNTER_SIZE 32
 #define TIMER_STAMP_FIXED_PERIOD 0
 #define TIMER_STAMP_FREQ 100000000

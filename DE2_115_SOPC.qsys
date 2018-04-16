@@ -34,7 +34,15 @@
    {
       datum baseAddress
       {
-         value = "32";
+         value = "0";
+         type = "String";
+      }
+   }
+   element DE2_115_SOPC
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
          type = "String";
       }
    }
@@ -141,7 +149,7 @@
    {
       datum baseAddress
       {
-         value = "134221968";
+         value = "134222000";
          type = "String";
       }
    }
@@ -168,6 +176,27 @@
       datum baseAddress
       {
          value = "16";
+         type = "String";
+      }
+   }
+   element mouse_core_remake_0
+   {
+      datum _sortIndex
+      {
+         value = "19";
+         type = "int";
+      }
+   }
+   element mouse_core_remake_0.MOUSE_SLAVE
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "134221824";
          type = "String";
       }
    }
@@ -262,7 +291,7 @@
    {
       datum baseAddress
       {
-         value = "134221952";
+         value = "134221984";
          type = "String";
       }
    }
@@ -418,7 +447,7 @@
    {
       datum baseAddress
       {
-         value = "48";
+         value = "16";
          type = "String";
       }
    }
@@ -449,7 +478,7 @@
       }
       datum baseAddress
       {
-         value = "134221824";
+         value = "134221920";
          type = "String";
       }
    }
@@ -475,7 +504,7 @@
    {
       datum baseAddress
       {
-         value = "134221856";
+         value = "134221952";
          type = "String";
       }
    }
@@ -516,23 +545,14 @@
    dir="end">
   <port name="reset_n" internal="reset_n" />
  </interface>
+ <interface name="key_external_connection" internal="key.external_connection" />
  <interface
-   name="key_external_connection"
-   internal="key.external_connection"
-   type="conduit"
-   dir="end">
-  <port name="in_port_to_the_key" internal="in_port" />
- </interface>
- <interface
-   name="mouse_x"
-   internal="mouse_x.external_connection"
+   name="mouse_data"
+   internal="mouse_core_remake_0.EXPORT_DATA"
    type="conduit"
    dir="end" />
- <interface
-   name="mouse_y"
-   internal="mouse_y.external_connection"
-   type="conduit"
-   dir="end" />
+ <interface name="mouse_x" internal="mouse_x.external_connection" />
+ <interface name="mouse_y" internal="mouse_y.external_connection" />
  <interface name="pll_c1" internal="pll.c1" type="clock" dir="start">
   <port name="altpll_sdram" internal="c1" />
  </interface>
@@ -566,18 +586,10 @@
  </interface>
  <interface
    name="sma_in_external_connection"
-   internal="sma_in.external_connection"
-   type="conduit"
-   dir="end">
-  <port name="in_port_to_the_sma_in" internal="in_port" />
- </interface>
+   internal="sma_in.external_connection" />
  <interface
    name="sma_out_external_connection"
-   internal="sma_out.external_connection"
-   type="conduit"
-   dir="end">
-  <port name="out_port_from_the_sma_out" internal="out_port" />
- </interface>
+   internal="sma_out.external_connection" />
  <interface
    name="sram_conduit_end"
    internal="sram.conduit_end"
@@ -591,13 +603,7 @@
   <port name="SRAM_CE_n_from_the_sram" internal="SRAM_CE_n" />
   <port name="SRAM_OE_n_from_the_sram" internal="SRAM_OE_n" />
  </interface>
- <interface
-   name="sw_external_connection"
-   internal="sw.external_connection"
-   type="conduit"
-   dir="end">
-  <port name="in_port_to_the_sw" internal="in_port" />
- </interface>
+ <interface name="sw_external_connection" internal="sw.external_connection" />
  <interface
    name="usb_conduit_end"
    internal="CY7C67200_IF_0.conduit_end"
@@ -637,7 +643,7 @@
   <parameter name="RESPONSE_FIFO_DEPTH" value="256" />
   <parameter name="SLAVE_SYNC_DEPTH" value="3" />
   <parameter name="SYMBOL_WIDTH" value="8" />
-  <parameter name="SYSINFO_ADDR_WIDTH" value="6" />
+  <parameter name="SYSINFO_ADDR_WIDTH" value="5" />
   <parameter name="USE_AUTO_ADDRESS_WIDTH" value="0" />
  </module>
  <module name="cpu" kind="altera_nios2_qsys" version="15.0" enabled="1">
@@ -650,7 +656,7 @@
   <parameter name="cpuReset" value="false" />
   <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
   <parameter name="dataAddrWidth" value="28" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x8000000' /><slave name='cpu.jtag_debug_module' start='0x8000800' end='0x8001000' /><slave name='timer.s1' start='0x8001000' end='0x8001020' /><slave name='timer_stamp.s1' start='0x8001020' end='0x8001040' /><slave name='mouse_y.s1' start='0x8001040' end='0x8001050' /><slave name='mouse_x.s1' start='0x8001050' end='0x8001060' /><slave name='sma_out.s1' start='0x8001060' end='0x8001070' /><slave name='sma_in.s1' start='0x8001070' end='0x8001080' /><slave name='pll.pll_slave' start='0x8001080' end='0x8001090' /><slave name='jtag_uart.avalon_jtag_slave' start='0x8001090' end='0x8001098' /><slave name='sram.avalon_slave' start='0x8200000' end='0x8400000' /><slave name='sw.s1' start='0x9000000' end='0x9000010' /><slave name='key.s1' start='0x9000010' end='0x9000020' /><slave name='CY7C67200_IF_0.hpi' start='0x9000020' end='0x9000030' /><slave name='sysid.control_slave' start='0x9000030' end='0x9000038' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x8000000' /><slave name='cpu.jtag_debug_module' start='0x8000800' end='0x8001000' /><slave name='mouse_core_remake_0.MOUSE_SLAVE' start='0x8001000' end='0x8001040' /><slave name='timer.s1' start='0x8001060' end='0x8001080' /><slave name='timer_stamp.s1' start='0x8001080' end='0x80010A0' /><slave name='pll.pll_slave' start='0x80010A0' end='0x80010B0' /><slave name='jtag_uart.avalon_jtag_slave' start='0x80010B0' end='0x80010B8' /><slave name='sram.avalon_slave' start='0x8200000' end='0x8400000' /><slave name='CY7C67200_IF_0.hpi' start='0x9000000' end='0x9000010' /><slave name='sysid.control_slave' start='0x9000010' end='0x9000018' /></address-map>]]></parameter>
   <parameter name="dcache_bursts" value="false" />
   <parameter name="dcache_lineSize" value="32" />
   <parameter name="dcache_numTCDM" value="0" />
@@ -678,7 +684,7 @@
   <parameter name="impl" value="Fast" />
   <parameter name="instAddrWidth" value="28" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x8000000' /><slave name='cpu.jtag_debug_module' start='0x8000800' end='0x8001000' /><slave name='sram.avalon_slave' start='0x8200000' end='0x8400000' /></address-map>]]></parameter>
-  <parameter name="internalIrqMaskSystemInfo" value="63" />
+  <parameter name="internalIrqMaskSystemInfo" value="57" />
   <parameter name="manuallyAssignCpuID" value="false" />
   <parameter name="mmu_TLBMissExcOffset" value="0" />
   <parameter name="mmu_TLBMissExcSlave" value="" />
@@ -786,7 +792,7 @@
   <parameter name="writeBufferDepth" value="64" />
   <parameter name="writeIRQThreshold" value="8" />
  </module>
- <module name="key" kind="altera_avalon_pio" version="15.0" enabled="1">
+ <module name="key" kind="altera_avalon_pio" version="15.0" enabled="0">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="true" />
@@ -800,11 +806,16 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="4" />
  </module>
- <module name="mouse_x" kind="altera_avalon_pio" version="15.0" enabled="1">
+ <module
+   name="mouse_core_remake_0"
+   kind="mouse_core_remake"
+   version="1.0"
+   enabled="1" />
+ <module name="mouse_x" kind="altera_avalon_pio" version="15.0" enabled="0">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="true" />
-  <parameter name="clockRate" value="10000000" />
+  <parameter name="clockRate" value="50000000" />
   <parameter name="direction" value="Output" />
   <parameter name="edgeType" value="FALLING" />
   <parameter name="generateIRQ" value="true" />
@@ -814,11 +825,11 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="10" />
  </module>
- <module name="mouse_y" kind="altera_avalon_pio" version="15.0" enabled="1">
+ <module name="mouse_y" kind="altera_avalon_pio" version="15.0" enabled="0">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="true" />
-  <parameter name="clockRate" value="10000000" />
+  <parameter name="clockRate" value="50000000" />
   <parameter name="direction" value="Output" />
   <parameter name="edgeType" value="FALLING" />
   <parameter name="generateIRQ" value="true" />
@@ -1024,7 +1035,7 @@
   <parameter name="registerDataIn" value="true" />
   <parameter name="rowWidth" value="13" />
  </module>
- <module name="sma_in" kind="altera_avalon_pio" version="15.0" enabled="1">
+ <module name="sma_in" kind="altera_avalon_pio" version="15.0" enabled="0">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -1038,7 +1049,7 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="1" />
  </module>
- <module name="sma_out" kind="altera_avalon_pio" version="15.0" enabled="1">
+ <module name="sma_out" kind="altera_avalon_pio" version="15.0" enabled="0">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -1057,7 +1068,7 @@
   <parameter name="AUTO_CLOCK_RESET_CLOCK_RATE" value="100000000" />
   <parameter name="DATA_BITS" value="16" />
  </module>
- <module name="sw" kind="altera_avalon_pio" version="15.0" enabled="1">
+ <module name="sw" kind="altera_avalon_pio" version="15.0" enabled="0">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="true" />
@@ -1111,9 +1122,18 @@
    kind="avalon"
    version="15.0"
    start="cpu.data_master"
+   end="mouse_core_remake_0.MOUSE_SLAVE">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x08001000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.0"
+   start="cpu.data_master"
    end="jtag_uart.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x08001090" />
+  <parameter name="baseAddress" value="0x080010b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1140,7 +1160,7 @@
    start="cpu.data_master"
    end="pll.pll_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x08001080" />
+  <parameter name="baseAddress" value="0x080010a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1173,12 +1193,12 @@
    start="cpu.data_master"
    end="timer_stamp.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x08001020" />
+  <parameter name="baseAddress" value="0x08001080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="15.0" start="cpu.data_master" end="timer.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x08001000" />
+  <parameter name="baseAddress" value="0x08001060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="15.0" start="cpu.data_master" end="mouse_x.s1">
@@ -1224,7 +1244,7 @@
    start="clock_crossing_io.m0"
    end="sysid.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0030" />
+  <parameter name="baseAddress" value="0x0010" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1233,7 +1253,7 @@
    start="clock_crossing_io.m0"
    end="CY7C67200_IF_0.hpi">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0020" />
+  <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1267,8 +1287,6 @@
  <connection kind="clock" version="15.0" start="pll.c2" end="sysid.clk" />
  <connection kind="clock" version="15.0" start="pll.c2" end="key.clk" />
  <connection kind="clock" version="15.0" start="pll.c2" end="sw.clk" />
- <connection kind="clock" version="15.0" start="pll.c2" end="mouse_x.clk" />
- <connection kind="clock" version="15.0" start="pll.c2" end="mouse_y.clk" />
  <connection
    kind="clock"
    version="15.0"
@@ -1280,6 +1298,13 @@
    version="15.0"
    start="pll.c2"
    end="clock_crossing_io.m0_clk" />
+ <connection
+   kind="clock"
+   version="15.0"
+   start="clk_50.clk"
+   end="mouse_core_remake_0.CLK" />
+ <connection kind="clock" version="15.0" start="clk_50.clk" end="mouse_y.clk" />
+ <connection kind="clock" version="15.0" start="clk_50.clk" end="mouse_x.clk" />
  <connection
    kind="clock"
    version="15.0"
@@ -1311,6 +1336,11 @@
    end="timer_stamp.irq">
   <parameter name="irqNumber" value="4" />
  </connection>
+ <connection
+   kind="reset"
+   version="15.0"
+   start="clk_50.clk_reset"
+   end="mouse_core_remake_0.RESET" />
  <connection
    kind="reset"
    version="15.0"
@@ -1388,6 +1418,11 @@
    version="15.0"
    start="clk_50.clk_reset"
    end="clock_crossing_io.s0_reset" />
+ <connection
+   kind="reset"
+   version="15.0"
+   start="cpu.jtag_debug_module_reset"
+   end="mouse_core_remake_0.RESET" />
  <connection
    kind="reset"
    version="15.0"

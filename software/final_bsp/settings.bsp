@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Apr 15, 2018 8:52:39 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1523843559427</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Apr 15, 2018 11:12:38 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1523851958538</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\AlC\Desktop\DE2_115_NIOS_HOST_MOUSE_VGA\software\final_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\DE2_115_SOPC.sopcinfo</SopcDesignFile>
@@ -893,50 +893,32 @@
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>mouse_core_remake_0</slaveDescriptor>
+                <addressRange>0x08001000 - 0x0800103F</addressRange>
+                <addressSpan>64</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>timer</slaveDescriptor>
-                <addressRange>0x08001000 - 0x0800101F</addressRange>
+                <addressRange>0x08001060 - 0x0800107F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>timer_stamp</slaveDescriptor>
-                <addressRange>0x08001020 - 0x0800103F</addressRange>
+                <addressRange>0x08001080 - 0x0800109F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>mouse_y</slaveDescriptor>
-                <addressRange>0x08001040 - 0x0800104F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>mouse_x</slaveDescriptor>
-                <addressRange>0x08001050 - 0x0800105F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>sma_out</slaveDescriptor>
-                <addressRange>0x08001060 - 0x0800106F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>sma_in</slaveDescriptor>
-                <addressRange>0x08001070 - 0x0800107F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
                 <slaveDescriptor>pll</slaveDescriptor>
-                <addressRange>0x08001080 - 0x0800108F</addressRange>
+                <addressRange>0x080010A0 - 0x080010AF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart</slaveDescriptor>
-                <addressRange>0x08001090 - 0x08001097</addressRange>
+                <addressRange>0x080010B0 - 0x080010B7</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
@@ -947,26 +929,14 @@
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>sw</slaveDescriptor>
+                <slaveDescriptor>CY7C67200_IF_0</slaveDescriptor>
                 <addressRange>0x09000000 - 0x0900000F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>key</slaveDescriptor>
-                <addressRange>0x09000010 - 0x0900001F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>CY7C67200_IF_0</slaveDescriptor>
-                <addressRange>0x09000020 - 0x0900002F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
                 <slaveDescriptor>sysid</slaveDescriptor>
-                <addressRange>0x09000030 - 0x09000037</addressRange>
+                <addressRange>0x09000010 - 0x09000017</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>

@@ -36,7 +36,7 @@ module DE2_115_SOPC_sysid (
 
   wire    [ 31: 0] readdata;
   //control_slave, which is an e_avalon_slave
-  assign readdata = address ? 1523842120 : 0;
+  assign readdata = address ? 1523851750 : 0;
 
 endmodule
 
